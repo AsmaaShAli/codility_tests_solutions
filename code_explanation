@@ -1,0 +1,10 @@
+The program asks for the longest binary sequance of 0's between two 1's in a binary represtation of a number
+My algorithm is as follows : 
+first check if the number is a multiple of 2 like : 2,4,8,16,32...etc , then there are no binary gap in this binary rep.
+second check if the number is less than a multiple of 2 by 1, like 1,3,7,15....etc. then its binary representation is all 1's, no gaps
+third check if the number is greater with 1 of a multiple of 2, like 3,5,9,17,33,...etc. this means it has 1 in the begining and 1 in the end and all 0's in the middle, so the gap will be the length minus 2 , that easy.
+fourth with any other number, the gap is found by counting 0's in the number from cell 1 in the array of binary representation, then find if there's is another 1 at the end, if found then store the count in another array of gaps. start again to find if there's a longer sequance of zero's .
+
+there's a boolean called currently_one to stop the count if there are consequant 1's and start again with the last of them
+
+then lastly return the maximum of gaps.
